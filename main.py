@@ -1,54 +1,93 @@
-import os
-from langchain.embedders import HuggingFaceEmbedder
-from weaviate import Client, ObjectsBatchRequest
-from PyPDF2 import PdfReader
+import argparse
+from langchain_community.vectorstores import Weaviate 
+from langchain_community.document_loaders import PyPDFLoader   
+from langchain_text_splitters import CharacterTextSplitter
+from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
+from sentence_transformers import SentenceTransformer
 
-# Initialize the HuggingFace embedder
-embedder = HuggingFaceEmbedder()
+import weaviate
 
-# Initialize Weaviate client
-client = Client("http://localhost:8080")
+client=None
+model = SentenceTransformer('sentence-transformers/all-mpnet-base-v2')
 
-def read_and_clean_pdf(file_path):
-    reader = PdfReader(file_path)
-    text = ""
-    for page in reader.pages:
-        text += page.extract_text()
-    # Remove page numbers
-    text = '\n'.join([line for line in text.split('\n') if not line.isdigit()])
+schema = {
+    "classes": [
+        {
+            "class": "Embeddings",
+            "properties": [
+                {
+                    "property": "source",
+                    "dataType": "string"
+                },
+                {
+                    "property": "index",
+                    "dataType": "int"
+                },
+                {
+                    "property": "embedding",
+                    "dataType": "vector"
+                }
+            ]
+        }
+    ]
+}
+
+def save_to_db(source, index, embedding):
+    client.batch_import(
+        "Embeddings",
+        [
+            {
+                "source": source,
+                "index": index,
+                "embedding": embedding
+            }
+        ]
+    )
+    print("Inserted")
+
+def read_and_filter_pdf(file_path):
+    pdf_content = PyPDFLoader(file_path).load_and_split()[0].page_content
+    text = '\n'.join([line for line in pdf_content.split('\n') if not line.isdigit()])
     return text
 
-def chunk_text(text, chunk_size=512):
-    return [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
+def chunk_pdf(pdf_content):
+    text_splitter = CharacterTextSplitter(
+        separator="\n",chunk_size=1000,chunk_overlap=200,length_function=len
+    )
+    chunks = text_splitter.split_text(pdf_content)
+    return chunks
 
-def embed_chunks(chunks):
-    return [embedder.embed(chunk) for chunk in chunks]
+def gen_embeddings(chunks, source):
+    for i, chunk in chunks:
+        embedding = model.encode(chunk)
+        save_to_db(source, i, embedding)
+        #print(embedding)
 
-def save_to_weaviate(embeddings):
-    batch = ObjectsBatchRequest()
-    for embedding in embeddings:
-        # Create a data object for Weaviate
-        data_object = {
-            "content": embedding,
-            "type": "Embedding"
-        }
-        batch.add(data_object)
-    client.batch.create(batch)
+def start():
+    parser = argparse.ArgumentParser(description="Read a PDF file.")
+    parser.add_argument("--pdf_file", type=str, required=True, help="Path to the PDF file")
+    args = parser.parse_args()
 
-if __name__ == "__main__":
-    file_path = input("Enter the path to the PDF file: ")
-    
-    # Ensure the file exists
-    if not os.path.isfile(file_path):
-        print("File does not exist.")
-        exit()
+    pdf_content = read_and_filter_pdf(args.pdf_file)
+    #print("PRINTING RAW")
+    #print(pdf_content)
+    #print("PRINTING CHUNKS")
+    chunks = chunk_pdf(pdf_content)
+    #print(chunks)
+    gen_embeddings(chunks, args.pdf_file)
 
-    text = read_and_clean_pdf(file_path)
+try: 
+    client = weaviate.Client(
+        url="https://579-project-sxs0vdgu.weaviate.network",
+    )
+    client.schema.create_class(schema)
+    start()
+except Exception as e:
+    print("Failed to connect to database!")
+    print(e)
+finally:
+    client.close()
 
-    chunks = chunk_text(text)
 
-    embeddings = embed_chunks(chunks)
 
-    save_to_weaviate(embeddings)
 
-    print("The PDF content has been indexed in Weaviate.")

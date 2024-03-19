@@ -1,7 +1,9 @@
 import weaviate
+import argparse
 import json
 from embedding_util import generate_embeddings
 from PyPDF2 import PdfReader
+from langchain_community.document_loaders import PyPDFLoader 
 import os
 
 client = weaviate.Client(
@@ -11,7 +13,7 @@ client = weaviate.Client(
 # Just to illustrate a simple Weaviate health check, if part of a larger system
 print('is_ready:', client.is_ready())
 
-file_path = '/Users/aaasif/OneDrive - Iowa State University/Spring 24/ComS 579/project/project_579/data/dummy.pdf'
+#file_path = '/Users/aaasif/OneDrive - Iowa State University/Spring 24/ComS 579/project/project_579/data/dummy.pdf'
 
 
 # Class definition object. Weaviate's autoschema feature will infer properties
@@ -27,20 +29,31 @@ client.schema.create_class(class_obj)
 
 
 # Test source documents
+# def read_and_clean_pdf(file_path):
+#     reader = PdfReader(file_path)
+#     text = ""
+#     for page in reader.pages:
+#         text += page.extract_text()
+#     # Remove page numbers
+#     text = '\n'.join([line for line in text.split('\n') if not line.isdigit()])
+#     return text
+
 def read_and_clean_pdf(file_path):
-    reader = PdfReader(file_path)
-    text = ""
-    for page in reader.pages:
-        text += page.extract_text()
-    # Remove page numbers
-    text = '\n'.join([line for line in text.split('\n') if not line.isdigit()])
+    pdf_content = PyPDFLoader(file_path).load_and_split()[0].page_content
+    text = '\n'.join([line for line in pdf_content.split('\n') if not line.isdigit()])
     return text
 
 def chunk_text(text, chunk_size=512):
     return [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
 
-documents = read_and_clean_pdf(file_path)
-chunks = chunk_text(documents)
+
+#documents = read_and_clean_pdf(file_path)
+parser = argparse.ArgumentParser(description="Read a PDF file.")
+parser.add_argument("--pdf_file", type=str, required=True, help="Path to the PDF file")
+args = parser.parse_args()
+
+pdf_content = read_and_clean_pdf(args.pdf_file)
+chunks = chunk_text(pdf_content)
 
 
 
