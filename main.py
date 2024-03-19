@@ -1,47 +1,24 @@
 import argparse
-from langchain_community.vectorstores import Weaviate 
+import weaviate
+#from langchain_community.vectorstores import Weaviate 
+from weaviate.classes.config import Property, DataType
 from langchain_community.document_loaders import PyPDFLoader   
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_community.embeddings.huggingface import HuggingFaceEmbeddings
 from sentence_transformers import SentenceTransformer
 
-import weaviate
-
 client=None
+embeddings=None
 model = SentenceTransformer('sentence-transformers/all-mpnet-base-v2')
 
-schema = {
-    "classes": [
-        {
-            "class": "Embeddings",
-            "properties": [
-                {
-                    "property": "source",
-                    "dataType": "string"
-                },
-                {
-                    "property": "index",
-                    "dataType": "int"
-                },
-                {
-                    "property": "embedding",
-                    "dataType": "vector"
-                }
-            ]
-        }
-    ]
-}
-
 def save_to_db(source, index, embedding):
-    client.batch_import(
-        "Embeddings",
-        [
+    embeddings.data.insert(
+        properties=
             {
                 "source": source,
                 "index": index,
                 "embedding": embedding
             }
-        ]
     )
     print("Inserted")
 
@@ -77,16 +54,23 @@ def start():
     gen_embeddings(chunks, args.pdf_file)
 
 try: 
-    client = weaviate.Client(
-        url="https://579-project-sxs0vdgu.weaviate.network",
+    client = weaviate.connect_to_wcs(
+        cluster_url="https://579-project-24szk15n.weaviate.network",
+        auth_credentials=weaviate.auth.AuthApiKey("KEY")
     )
-    client.schema.create_class(schema)
+    # client.collections.create("Embeddings",
+    #     properties=[
+    #         Property(name="source", data_type=DataType.TEXT),
+    #         Property(name="index", data_type=DataType.INT),
+    #         Property(name="embedding", data_type=DataType.NUMBER_ARRAY),
+    #     ]
+    # )
+    #client.collections.delete("Embeddings")
+    embeddings = client.collections.get("Embeddings")
     start()
 except Exception as e:
     print("Failed to connect to database!")
     print(e)
-finally:
-    client.close()
 
 
 
