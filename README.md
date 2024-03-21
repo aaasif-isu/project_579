@@ -8,7 +8,7 @@ Retrieval-augmented generation (RAG) is a framework to give generative models kn
 
 3. Run the following in the terminal:
    
-    python test.py --pdf_file "paper.pdf"
+    python main_final.py --pdf_file "paper.pdf"
 
 4. If the script runs successfully, then you will see the following messages:
    
