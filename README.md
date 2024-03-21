@@ -17,4 +17,4 @@ Retrieval-augmented generation (RAG) is a framework to give generative models kn
     Indexing successfully
 
 You can see the video demo here: 
-https://drive.google.com/file/d/1-lfAJYCinAbPagW9FoAG1QhhNZOon_d9/view?usp=drive_link
+https://drive.google.com/drive/folders/1v1YNYZv4nn9XQwhsmdr13daBvq48m3_X?usp=drive_link
