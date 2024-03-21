@@ -9,5 +9,5 @@ Retrieval-augmented generation (RAG) is a framework to give generative models kn
     python test.py --pdf_file "paper.pdf"
 
 3. If the script runs successfully, then you will see the following messages:
-    Connected to database successfully
+    Connected to database successfully\n
     Indexing successfully
