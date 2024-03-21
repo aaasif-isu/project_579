@@ -1,0 +1,6 @@
+langchain
+weaviate
+weaviate-client
+pdfminer
+sentence-transformers
+PyPDF2
