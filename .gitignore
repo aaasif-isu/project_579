@@ -1,0 +1,5 @@
+# Exclude virtual environment directories
+rag579/
+
+# Exclude MacOS system files
+.DS_Store
