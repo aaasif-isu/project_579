@@ -28,7 +28,9 @@ Second part:
 
 2. Sample output:
    Connected to database
+   
    Inserted Successfully
+   
    Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████| 8/8 [00:06<00:00,  1.32it/s]
 
 
