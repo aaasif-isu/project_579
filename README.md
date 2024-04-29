@@ -24,7 +24,7 @@ Second part:
 
 1. Run the following in the terminal:
    
-    python main_final.py --pdf_file "paper.pdf" --query='what is attention?'
+    python main.py --pdf_file "paper.pdf" --query='what is attention?'
 
 2. Sample output:
    Connected to database
