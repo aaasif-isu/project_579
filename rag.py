@@ -51,7 +51,7 @@ def RAG(Database_url: str,
 
     def chunk_pdf(pdf_content, chunk_size):
         text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size, chunk_overlap=200, length_function=len
+            chunk_size=chunk_size, chunk_overlap=200, length_function=len
         )
         chunks = text_splitter.split_text(pdf_content)
         return chunks
