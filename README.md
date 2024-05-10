@@ -2,6 +2,8 @@
 
 Retrieval-augmented generation (RAG) is a framework to give generative models knowledge without finetuning themselves. In this way, an LLM can adapt to new tasks quickly with the presence of new documents.
 
+**First Part:**
+
 1. Install packages:
    
     pip install -r requirements.txt
@@ -20,7 +22,7 @@ You can see the 1st video demo here:
 https://iastate.box.com/s/0befg4wzngas8i3x45hg6jif2zmzedih
 
 
-Second part:
+**Second part:**
 
 1. Run the following in the terminal:
    
