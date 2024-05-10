@@ -72,7 +72,8 @@ You can see the short video for the second milestone here:
 
 2. If the script runs successfully, then you will see the following messages:
    
-    ```Connected to database successfully
+    ```
+    Connected to database successfully
    
     Indexing successfully
     ```
