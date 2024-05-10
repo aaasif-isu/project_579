@@ -40,7 +40,8 @@ By following these steps, you will have the project set up and running on your s
 
 **Final version of the demo video-**
 
-[*Click here*](https://iastate.box.com/s/0ytyd2x4187l7zsanwt7jmtda5nxcjs5)
+[*Click here*](https://iastate.box.com/s/wth54wixapd58k49hyv6s5i2ouxiu773)
+
 
 
 ## Second Milestone
