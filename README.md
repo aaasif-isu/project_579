@@ -15,24 +15,24 @@ Experience our application firsthand by accessing our hosted version. Feel free 
 To get started with the final stage of the project, follow these steps:
 
 1. **Clone the Repository:**
-   Begin by cloning the repository to your local machine using the following command:
+   Begin by cloning the repository to your local machine using the following command
    ```bash
    git clone https://github.com/aaasif-isu/project_579.git
    ```
 2. **Install Dependencies:**
-   Install the required Python packages by executing:
+   Install the required Python packages by executing
    ```bash
    pip install -r requirements.txt
    ```
 3. **Configure Environment Variables:**
-   Create a .env file in the root directory and include the following lines, replacing _YOUR_API_KEY_ and _YOUR_DB_CLUSTER_ with your actual API key and database cluster URL respectively:
+   Create a .env file in the root directory and include the following lines, replacing _YOUR_API_KEY_ and _YOUR_DB_CLUSTER_ with your actual API key and database cluster URL respectively
    
    ```OPENAI_API_KEY=YOUR_API_KEY```
    
    ```DB_URL=YOUR_DB_CLUSTER```
    
 4. **Run the Application:**
-   Launch the application by running the main file. A popup window will appear where you need to upload a PDF file. After uploading, use the query section to input your queries:  
+   Launch the application by running the main file. A popup window will appear where you need to upload a PDF file. After uploading, use the query section to input your queries
    ```bash
    funix rag.py
    ```
