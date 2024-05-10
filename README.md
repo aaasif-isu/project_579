@@ -1,7 +1,10 @@
 # project_579: RAG System
-
-## Description
 Welcome to our RAG (Retrieval-Augmented Generation) system repository! This system leverages the power of LangChain to create a sophisticated pipeline that integrates with the Weaviate vector database for efficient data retrieval, enhanced by the intuitive and responsive interface provided by Funix.io.
+
+## Features
+LangChain Integration: Utilizes LangChain for creating complex, context-aware AI applications with an emphasis on combining retrieval with language model outputs.
+Weaviate Vector Database: Employs Weaviate, a vector search database, for fast and scalable retrieval of contextually relevant information, improving the accuracy and relevance of generated content.
+Funix.io UI: Features a user interface developed with Funix.io, a modern UI library designed for creating high-performance web applications with a focus on user experience.
 
 **First Part:**
 
