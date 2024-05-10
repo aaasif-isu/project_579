@@ -8,7 +8,7 @@ Welcome to our RAG (Retrieval-Augmented Generation) system repository! This syst
 
 ## Try it out
 Experience our application firsthand by accessing our hosted version. Feel free to test different functionalities and see how our system handles real-world data and queries. 
-[Access the Hosted Application](https://huggingface.co/spaces/arafspn/rag-project){: style="color: blue;"}
+[Access the Hosted Application](https://huggingface.co/spaces/arafspn/rag-project)
 
 
 
