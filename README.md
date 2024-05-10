@@ -59,7 +59,8 @@ By following these steps, you will have the project set up and running on your s
    ```
 
 You can see the short video for the second milestone here:
-https://iastate.box.com/s/leunf877sgdd7t0zcb54nhc526otkw08
+[Demo Video 2](https://iastate.box.com/s/leunf877sgdd7t0zcb54nhc526otkw08)
+
 
 **First Part:**
 
