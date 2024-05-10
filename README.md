@@ -38,7 +38,7 @@ To get started with the final stage of the project, follow these steps:
    ```
 By following these steps, you will have the project set up and running on your system. This setup is designed to ensure a smooth start and easy testing of the project functionalities.
 
-Final version of the demo video-
+**Final version of the demo video-**
 
 [*Click here*](https://iastate.box.com/s/0ytyd2x4187l7zsanwt7jmtda5nxcjs5)
 
