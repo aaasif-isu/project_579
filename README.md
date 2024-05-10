@@ -6,8 +6,9 @@ Welcome to our RAG (Retrieval-Augmented Generation) system repository! This syst
 - **Weaviate Vector Database:** Integrates with Weaviate for robust vector storage and retrieval, ensuring scalable and precise search functionalities.
 - **Funix.io UI Library:** Employs Funix.io to create an intuitive and responsive user interface, enhancing the user experience and interaction with the system.
 
-## Try it out
+## Live Demo
 Experience our application firsthand by accessing our hosted version. Feel free to test different functionalities and see how our system handles real-world data and queries. 
+
 [Access the Hosted Application](https://huggingface.co/spaces/arafspn/rag-project)
 
 
