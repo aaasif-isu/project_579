@@ -20,7 +20,7 @@ Experience our application firsthand by accessing our hosted version. Feel free 
       ```bash
    pip install -r requirements.txt
    ```
-3. Create a .env file in the root folder, put the line below and replace YOUR_API_KER with your openai api key
+3. Create a .env file in the root folder, put the line below and replace with your YOUR_API_KEY and DB_CLUSTER_KEY
    
    ```OPENAI_API_KEY=YOUR_API_KEY```
 
