@@ -55,7 +55,8 @@ By following these steps, you will have the project set up and running on your s
    Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████| 8/8 [00:06<00:00,  1.32it/s]
 
 
-   attention is a mechanism that relates different positions of a single sequence....and so on```
+   attention is a mechanism that relates different positions of a single sequence....and so on
+   ```
 
 You can see the short video for the second milestone here:
 https://iastate.box.com/s/leunf877sgdd7t0zcb54nhc526otkw08
