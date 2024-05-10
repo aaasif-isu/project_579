@@ -21,8 +21,8 @@ Experience our application firsthand by accessing our hosted version. Feel free 
    pip install -r requirements.txt
    ```
 3. Create a .env file in the root folder, put the line below and replace YOUR_API_KER with your openai api key
-OPENAI_API_KEY=YOUR_API_KEY
-DB_URL=YOUR_DB_CLUSTER
+- **OPENAI_API_KEY=YOUR_API_KEY**
+- **DB_URL=YOUR_DB_CLUSTER**
    
 5. Run the following in the terminal:
    
