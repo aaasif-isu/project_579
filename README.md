@@ -12,25 +12,30 @@ Experience our application firsthand by accessing our hosted version. Feel free 
 [Access the Hosted Application](https://huggingface.co/spaces/arafspn/rag-project)
 
 ## Final/ Third Milestone
-1. Clone this repository to your local machine:  
+To get started with the final stage of the project, follow these steps:
+
+1. **Clone the Repository**
+   Begin by cloning the repository to your local machine using the following command:
    ```bash
    git clone https://github.com/aaasif-isu/project_579.git
    ```
-2. Install the required Python packages:
+2. **Install Dependencies**
+   Install the required Python packages by executing:
    ```bash
    pip install -r requirements.txt
    ```
-3. Create a .env file in the root folder, put the line below and replace with your _API_KEY_ and _DB_CLUSTER__
-   
+4. **Configure Environment Variables**
+   Create a .env file in the root directory and include the following lines, replacing _YOUR_API_KEY_ and _YOUR_DB_CLUSTER_ with your actual API key and database cluster URL respectively:
    ```OPENAI_API_KEY=YOUR_API_KEY```
 
    ```DB_URL=YOUR_DB_CLUSTER```
    
-4. Run the main file in the terminal and there will be a pop up window and you need to upload pdf file and upload it and in query section write your query:
-   
+6. **Run the Application**
+   Launch the application by running the main file. A popup window will appear where you need to upload a PDF file. After uploading, use the query section to input your queries:  
    ```bash
    funix rag.py
    ```
+By following these steps, you will have the project set up and running on your system. This setup is designed to ensure a smooth start and easy testing of the project functionalities.
 
 
 **First Part:**
