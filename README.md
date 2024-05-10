@@ -14,9 +14,11 @@ Experience our application firsthand by accessing our hosted version. Feel free 
 ## Final/ Third Milestone
 1. Clone this repository to your local machine:
    
-   ```bash git clone https://github.com/aaasif-isu/project_579.git ```
+   ```bash
+   git clone https://github.com/aaasif-isu/project_579.git
+   ```
    
-2. Run the following in the terminal:
+3. Run the following in the terminal:
    
     funix rag.py
 
