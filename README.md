@@ -11,7 +11,14 @@ Experience our application firsthand by accessing our hosted version. Feel free 
 
 [Access the Hosted Application](https://huggingface.co/spaces/arafspn/rag-project)
 
-
+## Final/ Third Milestone
+1. Clone this repository to your local machine:
+   
+    > git clone https://github.com/aaasif-isu/project_579.git
+   
+2. Run the following in the terminal:
+   
+    funix rag.py
 
 
 **First Part:**
@@ -53,12 +60,5 @@ https://iastate.box.com/s/0befg4wzngas8i3x45hg6jif2zmzedih
 You can see the short video for the second milestone here:
 https://iastate.box.com/s/leunf877sgdd7t0zcb54nhc526otkw08
 
-**Final Part:**
-1. Install packages:
-   
-    pip install -r requirements.txt
-   
-2. Run the following in the terminal:
-   
-    funix rag.py
+
 
