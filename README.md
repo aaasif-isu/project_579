@@ -42,7 +42,7 @@ By following these steps, you will have the project set up and running on your s
 
 ## Second Milestone
 
-1. Run the following in the terminal:
+1. Run the following command in the terminal:
    ```bash
    python main.py --pdf_file "paper.pdf" --query='what is attention?'
    ```   
@@ -62,24 +62,24 @@ You can see the short video for the second milestone here:
 [Demo Video 2](https://iastate.box.com/s/leunf877sgdd7t0zcb54nhc526otkw08)
 
 
-**First Part:**
+## First Milestone
 
-1. Install packages:
-   
-    pip install -r requirements.txt
+1. Run the following command in the terminal:
 
-2. Run the following in the terminal:
-   
-    python main_final.py --pdf_file "paper.pdf"
+    ```bash
+   python main_final.py --pdf_file "paper.pdf"
+   ```     
 
-3. If the script runs successfully, then you will see the following messages:
+2. If the script runs successfully, then you will see the following messages:
    
-    Connected to database successfully
+    ```Connected to database successfully
    
     Indexing successfully
+    ```
 
-You can see the 1st video demo here: 
-https://iastate.box.com/s/0befg4wzngas8i3x45hg6jif2zmzedih
+You can see the short video for the first milestone here: 
+[Demo Video 1](https://iastate.box.com/s/0befg4wzngas8i3x45hg6jif2zmzedih)
+
 
 
 
