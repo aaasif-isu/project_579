@@ -17,18 +17,20 @@ Experience our application firsthand by accessing our hosted version. Feel free 
    git clone https://github.com/aaasif-isu/project_579.git
    ```
 2. Install the required Python packages:
-      ```bash
+   ```bash
    pip install -r requirements.txt
    ```
-3. Create a .env file in the root folder, put the line below and replace with your YOUR_API_KEY and DB_CLUSTER_KEY
+3. Create a .env file in the root folder, put the line below and replace with your _API_KEY_ and _DB_CLUSTER__
    
    ```OPENAI_API_KEY=YOUR_API_KEY```
 
    ```DB_URL=YOUR_DB_CLUSTER```
    
-4. Run the following in the terminal:
+4. Run the main file in the terminal and there will be a pop up window and you need to upload pdf file and upload it and in query section write your query:
    
-    funix rag.py
+   ```bash
+   funix rag.py
+   ```
 
 
 **First Part:**
