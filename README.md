@@ -12,13 +12,19 @@ Experience our application firsthand by accessing our hosted version. Feel free 
 [Access the Hosted Application](https://huggingface.co/spaces/arafspn/rag-project)
 
 ## Final/ Third Milestone
-1. Clone this repository to your local machine:
-   
+1. Clone this repository to your local machine:  
    ```bash
    git clone https://github.com/aaasif-isu/project_579.git
    ```
+2. Install the required Python packages:
+      ```bash
+   pip install -r requirements.txt
+   ```
+3. Create a .env file in the root folder, put the line below and replace YOUR_API_KER with your openai api key
+OPENAI_API_KEY=YOUR_API_KEY
+DB_URL=YOUR_DB_CLUSTER
    
-3. Run the following in the terminal:
+5. Run the following in the terminal:
    
     funix rag.py
 
