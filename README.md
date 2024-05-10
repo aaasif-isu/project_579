@@ -28,6 +28,7 @@ To get started with the final stage of the project, follow these steps:
    Create a .env file in the root directory and include the following lines, replacing _YOUR_API_KEY_ and _YOUR_DB_CLUSTER_ with your actual API key and database cluster URL respectively:
    
    ```OPENAI_API_KEY=YOUR_API_KEY```
+   
    ```DB_URL=YOUR_DB_CLUSTER```
    
 6. **Run the Application**
